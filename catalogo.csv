@@ -1,0 +1,340 @@
+variante_id,plant_id,nombre_comun,nombre_cientifico,tamano_envase_lts,precio,stock,elegibilidad
+1,1,Achillea millefolium,Achillea (blanca/rosada/amarilla),5,21000,48,3
+2,1,Achillea millefolium,Achillea (blanca/rosada/amarilla),12,33000,60,3
+3,1,Achillea millefolium,Achillea (blanca/rosada/amarilla),25,57000,45,4
+4,2,Agapanthus africanus,Agapanthus peter pan,5,13000,61,4
+5,2,Agapanthus africanus,Agapanthus peter pan,12,48000,5,2
+6,2,Agapanthus africanus,Agapanthus peter pan,25,45000,16,1
+7,3,Agapanthus africanus 'Albus',Agapanthus africanus blanco,5,24000,20,1
+8,3,Agapanthus africanus 'Albus',Agapanthus africanus blanco,12,32000,63,4
+9,3,Agapanthus africanus 'Albus',Agapanthus africanus blanco,25,59000,29,2
+10,4,Anemone × hybrida,Anémona japónica,5,17000,19,4
+11,4,Anemone × hybrida,Anémona japónica,12,49000,48,3
+12,4,Anemone × hybrida,Anémona japónica,25,51000,50,2
+13,5,Asclepias curassavica,Asclepias,5,20000,8,2
+14,5,Asclepias curassavica,Asclepias,12,44000,37,4
+15,5,Asclepias curassavica,Asclepias,25,40000,27,4
+16,6,Baccharis articulata / Baccharis trimera,Carqueja,5,19000,27,3
+17,6,Baccharis articulata / Baccharis trimera,Carqueja,12,32000,64,3
+18,6,Baccharis articulata / Baccharis trimera,Carqueja,25,42000,17,1
+19,7,Bambusa multiplex 'Golden Goddess',Bambú multiplex,5,17000,53,1
+20,7,Bambusa multiplex 'Golden Goddess',Bambú multiplex,12,38000,26,4
+21,7,Bambusa multiplex 'Golden Goddess',Bambú multiplex,25,48000,20,2
+22,8,Berberis thunbergii 'Atropurpurea',Berberis thunbergii atropurpúrea,5,21000,36,3
+23,8,Berberis thunbergii 'Atropurpurea',Berberis thunbergii atropurpúrea,12,29000,7,3
+24,8,Berberis thunbergii 'Atropurpurea',Berberis thunbergii atropurpúrea,25,53000,25,1
+25,9,Berberis thunbergii red pillar,Berberis thunbergii red pillar,5,23000,48,3
+26,9,Berberis thunbergii red pillar,Berberis thunbergii red pillar,12,46000,9,2
+27,9,Berberis thunbergii red pillar,Berberis thunbergii red pillar,25,69000,34,1
+28,10,Beschorneria yuccoides,Beschorneria,5,21000,31,2
+29,10,Beschorneria yuccoides,Beschorneria,12,49000,20,4
+30,10,Beschorneria yuccoides,Beschorneria,25,57000,10,4
+31,11,Blechnum spp. / Polystichum spp.,Helecho serrucho,5,22000,3,3
+32,11,Blechnum spp. / Polystichum spp.,Helecho serrucho,12,50000,24,1
+33,11,Blechnum spp. / Polystichum spp.,Helecho serrucho,25,48000,32,1
+34,12,Brunfelsia australis,Jazmín del paraguay,5,20000,35,4
+35,12,Brunfelsia australis,Jazmín del paraguay,12,27000,36,2
+36,12,Brunfelsia australis,Jazmín del paraguay,25,52000,57,3
+37,13,Buxus microphylla,Buxus enano,5,16000,25,2
+38,13,Buxus microphylla,Buxus enano,12,33000,21,3
+39,13,Buxus microphylla,Buxus enano,25,69000,8,2
+40,14,Buxus sempervirens,Boj / Buxus,5,20000,9,4
+41,14,Buxus sempervirens,Boj / Buxus,12,26000,22,4
+42,14,Buxus sempervirens,Boj / Buxus,25,74000,7,1
+43,15,Callistemon lanceolatus 'Imperialis',Callistemon lanceolatus imperiallis,5,21000,42,3
+44,15,Callistemon lanceolatus 'Imperialis',Callistemon lanceolatus imperiallis,12,31000,40,1
+45,15,Callistemon lanceolatus 'Imperialis',Callistemon lanceolatus imperiallis,25,41000,31,1
+46,16,Carex buchananii,Carex buchananii,5,22000,23,3
+47,16,Carex buchananii,Carex buchananii,12,49000,24,4
+48,16,Carex buchananii,Carex buchananii,25,50000,2,1
+49,17,Carex testacea,Carex verde,5,17000,32,3
+50,17,Carex testacea,Carex verde,12,49000,34,3
+51,17,Carex testacea,Carex verde,25,64000,41,1
+52,18,Casuarina cunninghamiana,Casuarina cunninghamiana,5,24000,44,3
+53,18,Casuarina cunninghamiana,Casuarina cunninghamiana,12,50000,55,2
+54,18,Casuarina cunninghamiana,Casuarina cunninghamiana,25,66000,43,1
+55,19,Chaenomeles lagenaria,Falso membrillo,5,12000,5,3
+56,19,Chaenomeles lagenaria,Falso membrillo,12,28000,23,2
+57,19,Chaenomeles lagenaria,Falso membrillo,25,52000,55,1
+58,20,Cortaderia selloana,Cortadera / Pasto de la Pampa,5,16000,50,2
+59,20,Cortaderia selloana,Cortadera / Pasto de la Pampa,12,28000,47,3
+60,20,Cortaderia selloana,Cortadera / Pasto de la Pampa,25,67000,25,1
+61,21,Cortaderia selloana 'Pumila',Cortaderia enana / Pampa grass,5,13000,14,2
+62,21,Cortaderia selloana 'Pumila',Cortaderia enana / Pampa grass,12,48000,50,3
+63,21,Cortaderia selloana 'Pumila',Cortaderia enana / Pampa grass,25,70000,54,3
+64,22,Cotoneaster dielsiana,Cotoneaster dielsiana,5,16000,3,4
+65,22,Cotoneaster dielsiana,Cotoneaster dielsiana,12,34000,16,2
+66,22,Cotoneaster dielsiana,Cotoneaster dielsiana,25,66000,43,3
+67,23,Cotoneaster racimiflora,Cotoneaster racimiflora,5,23000,38,1
+68,23,Cotoneaster racimiflora,Cotoneaster racimiflora,12,43000,58,1
+69,23,Cotoneaster racimiflora,Cotoneaster racimiflora,25,59000,64,4
+70,24,Cotoneaster serotina,Cotoneaster serotina,5,22000,28,4
+71,24,Cotoneaster serotina,Cotoneaster serotina,12,31000,11,3
+72,24,Cotoneaster serotina,Cotoneaster serotina,25,57000,32,2
+73,25,Cupressus × leylandii,Cupressus leylandi,5,20000,46,2
+74,25,Cupressus × leylandii,Cupressus leylandi,12,35000,10,2
+75,25,Cupressus × leylandii,Cupressus leylandi,25,72000,48,2
+76,26,Dianella variegata,Dianella variegata,5,15000,27,2
+77,26,Dianella variegata,Dianella variegata,12,41000,46,1
+78,26,Dianella variegata,Dianella variegata,25,49000,7,1
+79,27,Dietes grandiflora,Dietes grandiflora,5,13000,2,3
+80,27,Dietes grandiflora,Dietes grandiflora,12,37000,32,3
+81,27,Dietes grandiflora,Dietes grandiflora,25,42000,23,2
+82,28,Dodonea viscosa púrpura,Dodonea viscosa púrpura,5,14000,49,3
+83,28,Dodonea viscosa púrpura,Dodonea viscosa púrpura,12,42000,57,3
+84,28,Dodonea viscosa púrpura,Dodonea viscosa púrpura,25,51000,32,2
+85,29,Dracaena trifasciata,Lengua de suegra  verde y aurea,5,14000,42,2
+86,29,Dracaena trifasciata,Lengua de suegra  verde y aurea,12,29000,22,1
+87,29,Dracaena trifasciata,Lengua de suegra  verde y aurea,25,66000,24,1
+88,30,Dryopteris filix-mas,Helecho dryopteris,5,21000,58,1
+89,30,Dryopteris filix-mas,Helecho dryopteris,12,36000,42,1
+90,30,Dryopteris filix-mas,Helecho dryopteris,25,65000,44,1
+91,31,Duranta repens aurea,Duranta repens aurea,5,24000,8,1
+92,31,Duranta repens aurea,Duranta repens aurea,12,37000,5,1
+93,31,Duranta repens aurea,Duranta repens aurea,25,71000,13,4
+94,32,Elaeagnus pungens 'Maculata',Eleagnus aurea,5,14000,62,4
+95,32,Elaeagnus pungens 'Maculata',Eleagnus aurea,12,49000,42,4
+96,32,Elaeagnus pungens 'Maculata',Eleagnus aurea,25,70000,53,4
+97,33,Equisetum,Equisetum,5,12000,20,4
+98,33,Equisetum,Equisetum,12,43000,45,3
+99,33,Equisetum,Equisetum,25,72000,25,1
+100,34,Erigeron karvinskianus,Erigeron,5,24000,26,3
+101,34,Erigeron karvinskianus,Erigeron,12,31000,18,3
+102,34,Erigeron karvinskianus,Erigeron,25,54000,5,1
+103,35,Eucalyptus cinerea,Eucalyptus cinerea,5,23000,6,1
+104,35,Eucalyptus cinerea,Eucalyptus cinerea,12,41000,63,3
+105,35,Eucalyptus cinerea,Eucalyptus cinerea,25,71000,40,2
+106,36,Eugenia uniflora (pitanga) / Syzygium spp.,Eugenia,5,20000,49,1
+107,36,Eugenia uniflora (pitanga) / Syzygium spp.,Eugenia,12,41000,35,1
+108,36,Eugenia uniflora (pitanga) / Syzygium spp.,Eugenia,25,49000,48,3
+109,37,Euryops,Euryops,5,24000,39,3
+110,37,Euryops,Euryops,12,29000,10,3
+111,37,Euryops,Euryops,25,58000,51,1
+112,38,Ficus repens,Enamorada del muro,5,17000,23,3
+113,38,Ficus repens,Enamorada del muro,12,43000,18,1
+114,38,Ficus repens,Enamorada del muro,25,66000,7,4
+115,39,Firmiana simplex,Parasol de la china,5,16000,36,3
+116,39,Firmiana simplex,Parasol de la china,12,43000,57,1
+117,39,Firmiana simplex,Parasol de la china,25,68000,45,3
+118,40,Gardenia augusta fortuniana,Jazmín del cabo,5,13000,31,2
+119,40,Gardenia augusta fortuniana,Jazmín del cabo,12,42000,37,3
+120,40,Gardenia augusta fortuniana,Jazmín del cabo,25,61000,27,2
+121,41,Grevillea robusta,Roble sedoso,5,19000,63,2
+122,41,Grevillea robusta,Roble sedoso,12,38000,29,2
+123,41,Grevillea robusta,Roble sedoso,25,59000,64,2
+124,42,Hemerocallis,Hemerocallis,5,19000,44,3
+125,42,Hemerocallis,Hemerocallis,12,47000,3,4
+126,42,Hemerocallis,Hemerocallis,25,74000,3,3
+127,43,Hibiscus rosa-sinensis,Hibiscus,5,22000,44,3
+128,43,Hibiscus rosa-sinensis,Hibiscus,12,37000,18,3
+129,43,Hibiscus rosa-sinensis,Hibiscus,25,46000,31,3
+130,44,Hovenia dulcis,Hovenia dulcis,5,22000,40,1
+131,44,Hovenia dulcis,Hovenia dulcis,12,31000,20,3
+132,44,Hovenia dulcis,Hovenia dulcis,25,42000,48,4
+133,45,Hydrangea macrophylla,Hortensia rosada,5,18000,45,4
+134,45,Hydrangea macrophylla,Hortensia rosada,12,33000,27,4
+135,45,Hydrangea macrophylla,Hortensia rosada,25,60000,24,3
+136,46,Hypericum moserianum,Hypericum moserianum,5,24000,4,1
+137,46,Hypericum moserianum,Hypericum moserianum,12,35000,41,1
+138,46,Hypericum moserianum,Hypericum moserianum,25,56000,9,1
+139,47,Iris × louisiana,Iris louisiana violeta/bordó,5,16000,33,1
+140,47,Iris × louisiana,Iris louisiana violeta/bordó,12,30000,23,4
+141,47,Iris × louisiana,Iris louisiana violeta/bordó,25,46000,57,2
+142,48,Iris germanica,Iris germánica,5,12000,57,1
+143,48,Iris germanica,Iris germánica,12,31000,48,1
+144,48,Iris germanica,Iris germánica,25,57000,62,1
+145,49,Jasminum mesnyi,Jazmín amarillo,5,16000,22,3
+146,49,Jasminum mesnyi,Jazmín amarillo,12,37000,37,2
+147,49,Jasminum mesnyi,Jazmín amarillo,25,66000,12,3
+148,50,Juncus inflexus,Juncus Blue,5,16000,32,1
+149,50,Juncus inflexus,Juncus Blue,12,45000,48,4
+150,50,Juncus inflexus,Juncus Blue,25,74000,55,1
+151,51,Juniperus pfitzeriana aurea,Juniperus pfitzeriana aurea,5,21000,22,1
+152,51,Juniperus pfitzeriana aurea,Juniperus pfitzeriana aurea,12,40000,52,2
+153,51,Juniperus pfitzeriana aurea,Juniperus pfitzeriana aurea,25,68000,12,3
+154,52,Juniperus pfitzeriana old gold,Juniperus pfitzeriana old gold,5,22000,55,2
+155,52,Juniperus pfitzeriana old gold,Juniperus pfitzeriana old gold,12,49000,50,1
+156,52,Juniperus pfitzeriana old gold,Juniperus pfitzeriana old gold,25,54000,52,1
+157,53,Juniperus Sabina,Juniperus Sabina,5,14000,25,2
+158,53,Juniperus Sabina,Juniperus Sabina,12,32000,44,3
+159,53,Juniperus Sabina,Juniperus Sabina,25,42000,36,3
+160,54,Kniphofia uvaria,Flor de cohete,5,15000,63,2
+161,54,Kniphofia uvaria,Flor de cohete,12,33000,18,1
+162,54,Kniphofia uvaria,Flor de cohete,25,58000,47,4
+163,55,Lantana camara,Lantana camara,5,23000,62,3
+164,55,Lantana camara,Lantana camara,12,47000,23,1
+165,55,Lantana camara,Lantana camara,25,51000,16,2
+166,56,Lantana montevidensis,Lantana montevidensis,5,22000,13,3
+167,56,Lantana montevidensis,Lantana montevidensis,12,43000,38,3
+168,56,Lantana montevidensis,Lantana montevidensis,25,42000,16,2
+169,57,Lavanda dentata,Lavanda dentata,5,22000,37,4
+170,57,Lavanda dentata,Lavanda dentata,12,39000,45,1
+171,57,Lavanda dentata,Lavanda dentata,25,42000,36,4
+172,58,Ligustrina sinensis variegata alba,Ligustrina sinensis variegata alba,5,24000,28,3
+173,58,Ligustrina sinensis variegata alba,Ligustrina sinensis variegata alba,12,33000,42,4
+174,58,Ligustrina sinensis variegata alba,Ligustrina sinensis variegata alba,25,56000,43,3
+175,59,Ligustrum ovalifolium aureo,Olivetta aurea,5,19000,33,4
+176,59,Ligustrum ovalifolium aureo,Olivetta aurea,12,29000,41,4
+177,59,Ligustrum ovalifolium aureo,Olivetta aurea,25,65000,50,1
+178,60,Ligustrum texanum aurea,Ligustro texano aureo,5,22000,51,3
+179,60,Ligustrum texanum aurea,Ligustro texano aureo,12,32000,44,2
+180,60,Ligustrum texanum aurea,Ligustro texano aureo,25,59000,4,4
+181,61,Liriope muscari,Liriope muscari y verde,5,14000,39,3
+182,61,Liriope muscari,Liriope muscari y verde,12,39000,63,2
+183,61,Liriope muscari,Liriope muscari y verde,25,43000,31,4
+184,62,Melinis nerviglumis / Melinis minutiflora,Melinis,5,12000,11,4
+185,62,Melinis nerviglumis / Melinis minutiflora,Melinis,12,40000,28,2
+186,62,Melinis nerviglumis / Melinis minutiflora,Melinis,25,44000,15,4
+187,63,Miscanthus sinensis,Miscanthus sinensis variegata,5,13000,39,1
+188,63,Miscanthus sinensis,Miscanthus sinensis variegata,12,30000,25,4
+189,63,Miscanthus sinensis,Miscanthus sinensis variegata,25,56000,46,4
+190,64,Miscanthus sinensis 'Gracillimus',Miscanthus,5,15000,42,3
+191,64,Miscanthus sinensis 'Gracillimus',Miscanthus,12,44000,61,1
+192,64,Miscanthus sinensis 'Gracillimus',Miscanthus,25,69000,63,2
+193,65,Muhlenbergia Capilaris,Muhlenbergia Capilaris,5,23000,23,3
+194,65,Muhlenbergia Capilaris,Muhlenbergia Capilaris,12,26000,30,4
+195,65,Muhlenbergia Capilaris,Muhlenbergia Capilaris,25,64000,26,2
+196,66,Murraya paniculata,Jazmin kimura,5,19000,26,1
+197,66,Murraya paniculata,Jazmin kimura,12,36000,44,3
+198,66,Murraya paniculata,Jazmin kimura,25,57000,29,4
+199,67,Myoporum laetum,Mioporo / Siempreverde,5,17000,6,3
+200,67,Myoporum laetum,Mioporo / Siempreverde,12,31000,13,4
+201,67,Myoporum laetum,Mioporo / Siempreverde,25,66000,21,3
+202,68,Nandina domestica,Nandina doméstica,5,15000,9,1
+203,68,Nandina domestica,Nandina doméstica,12,42000,24,1
+204,68,Nandina domestica,Nandina doméstica,25,60000,59,2
+205,69,Nerium oleander,Laurel del flor,5,12000,40,1
+206,69,Nerium oleander,Laurel del flor,12,39000,32,4
+207,69,Nerium oleander,Laurel del flor,25,54000,26,4
+208,70,Ophiopogon,pasto ingles,5,16000,47,3
+209,70,Ophiopogon,pasto ingles,12,42000,59,2
+210,70,Ophiopogon,pasto ingles,25,75000,13,1
+211,71,Ophiopogon planiscapus 'Nigrescens',Pasto inglés negro,5,21000,43,3
+212,71,Ophiopogon planiscapus 'Nigrescens',Pasto inglés negro,12,34000,25,1
+213,71,Ophiopogon planiscapus 'Nigrescens',Pasto inglés negro,25,58000,60,1
+214,72,Panicum Virgatum,Panicum Virgatum,5,14000,27,2
+215,72,Panicum Virgatum,Panicum Virgatum,12,35000,59,1
+216,72,Panicum Virgatum,Panicum Virgatum,25,68000,34,2
+217,73,Parthenocissus tricuspidata 'Veitchii',Ampelopsis veitchi,5,15000,9,4
+218,73,Parthenocissus tricuspidata 'Veitchii',Ampelopsis veitchi,12,37000,55,1
+219,73,Parthenocissus tricuspidata 'Veitchii',Ampelopsis veitchi,25,64000,19,2
+220,74,Pennisetum alopecuroides,Cola de zorro,5,12000,46,3
+221,74,Pennisetum alopecuroides,Cola de zorro,12,44000,4,3
+222,74,Pennisetum alopecuroides,Cola de zorro,25,46000,54,2
+223,75,Pennisetum setaceum rubrum,Cola de zorro rubra,5,23000,14,2
+224,75,Pennisetum setaceum rubrum,Cola de zorro rubra,12,49000,7,3
+225,75,Pennisetum setaceum rubrum,Cola de zorro rubra,25,69000,14,4
+226,76,Pennisetum villosum,Cola de zorro blanca,5,15000,37,3
+227,76,Pennisetum villosum,Cola de zorro blanca,12,32000,2,3
+228,76,Pennisetum villosum,Cola de zorro blanca,25,42000,22,1
+229,77,Phytolacca dioica,Ombú,5,24000,39,4
+230,77,Phytolacca dioica,Ombú,12,27000,15,3
+231,77,Phytolacca dioica,Ombú,25,53000,7,3
+232,78,Pinus elliotti,Pinus elliotti,5,12000,45,2
+233,78,Pinus elliotti,Pinus elliotti,12,47000,58,1
+234,78,Pinus elliotti,Pinus elliotti,25,67000,45,2
+235,79,Pittosporum tobira,Azarero,5,21000,26,1
+236,79,Pittosporum tobira,Azarero,12,48000,44,1
+237,79,Pittosporum tobira,Azarero,25,52000,5,2
+238,80,Pittosporum toriba wheeleri,Azarero enano,5,21000,53,3
+239,80,Pittosporum toriba wheeleri,Azarero enano,12,41000,34,1
+240,80,Pittosporum toriba wheeleri,Azarero enano,25,47000,3,2
+241,81,Pogonatherum juncaceum,Caña enana,5,17000,13,2
+242,81,Pogonatherum juncaceum,Caña enana,12,40000,64,2
+243,81,Pogonatherum juncaceum,Caña enana,25,59000,55,2
+244,82,Pyracantha coccinea,Piracanta (Espino de fuego),5,20000,21,2
+245,82,Pyracantha coccinea,Piracanta (Espino de fuego),12,46000,17,3
+246,82,Pyracantha coccinea,Piracanta (Espino de fuego),25,50000,8,3
+247,83,Rosmarinus officinalis,Romero,5,18000,23,2
+248,83,Rosmarinus officinalis,Romero,12,32000,46,2
+249,83,Rosmarinus officinalis,Romero,25,49000,18,1
+250,84,Rosmarinus officinalis 'Prostratus',Romero rastrero,5,23000,16,3
+251,84,Rosmarinus officinalis 'Prostratus',Romero rastrero,12,35000,58,2
+252,84,Rosmarinus officinalis 'Prostratus',Romero rastrero,25,40000,41,1
+253,85,Ruellia,Ruellia,5,15000,58,1
+254,85,Ruellia,Ruellia,12,26000,47,2
+255,85,Ruellia,Ruellia,25,56000,4,4
+256,86,Salvia 'Nelsonii' / Salvia guaranitica 'Black and Blue' (afín),Salvia Nelson,5,13000,37,3
+257,86,Salvia 'Nelsonii' / Salvia guaranitica 'Black and Blue' (afín),Salvia Nelson,12,26000,32,3
+258,86,Salvia 'Nelsonii' / Salvia guaranitica 'Black and Blue' (afín),Salvia Nelson,25,50000,29,1
+259,87,Salvia greggii,Salvia greguii,5,20000,64,3
+260,87,Salvia greggii,Salvia greguii,12,47000,64,2
+261,87,Salvia greggii,Salvia greguii,25,72000,23,2
+262,88,Salvia guaranitica,Salvia guaranítica,5,22000,47,1
+263,88,Salvia guaranitica,Salvia guaranítica,12,34000,15,3
+264,88,Salvia guaranitica,Salvia guaranítica,25,64000,5,3
+265,89,Salvia involucrata,Salvia involucrata,5,22000,20,3
+266,89,Salvia involucrata,Salvia involucrata,12,26000,37,1
+267,89,Salvia involucrata,Salvia involucrata,25,49000,55,2
+268,90,Salvia leucantha,Salvia leucantha,5,19000,54,1
+269,90,Salvia leucantha,Salvia leucantha,12,45000,42,3
+270,90,Salvia leucantha,Salvia leucantha,25,73000,15,4
+271,91,Salvia patens / Salvia 'Pálida',Salvia pálida,5,24000,44,3
+272,91,Salvia patens / Salvia 'Pálida',Salvia pálida,12,49000,24,3
+273,91,Salvia patens / Salvia 'Pálida',Salvia pálida,25,62000,21,4
+274,92,Salvia sp,Salvias Guaranitica / leucanthas / wendy / farinacea,5,17000,10,2
+275,92,Salvia sp,Salvias Guaranitica / leucanthas / wendy / farinacea,12,40000,38,4
+276,92,Salvia sp,Salvias Guaranitica / leucanthas / wendy / farinacea,25,43000,28,2
+277,93,Santolina chamaecyparissus,Santolina,5,13000,45,3
+278,93,Santolina chamaecyparissus,Santolina,12,38000,61,3
+279,93,Santolina chamaecyparissus,Santolina,25,62000,62,2
+280,94,Sedum 'Herbstfreude' (Hylotelephium 'Autumn Joy'),Sedum Autumn Joy,5,13000,55,1
+281,94,Sedum 'Herbstfreude' (Hylotelephium 'Autumn Joy'),Sedum Autumn Joy,12,42000,55,1
+282,94,Sedum 'Herbstfreude' (Hylotelephium 'Autumn Joy'),Sedum Autumn Joy,25,74000,27,3
+283,95,Setaria poiretiana,Pasto palmeras,5,14000,30,1
+284,95,Setaria poiretiana,Pasto palmeras,12,45000,38,2
+285,95,Setaria poiretiana,Pasto palmeras,25,74000,61,4
+286,96,Spartium,Retama,5,23000,58,1
+287,96,Spartium,Retama,12,47000,64,2
+288,96,Spartium,Retama,25,53000,9,4
+289,97,Spiraea bumalda Anthony waterer,Corona de novia rosada,5,22000,21,3
+290,97,Spiraea bumalda Anthony waterer,Corona de novia rosada,12,32000,57,3
+291,97,Spiraea bumalda Anthony waterer,Corona de novia rosada,25,54000,59,4
+292,98,Spiraea cantoniensis,Corona de novia,5,15000,19,2
+293,98,Spiraea cantoniensis,Corona de novia,12,36000,16,1
+294,98,Spiraea cantoniensis,Corona de novia,25,56000,32,4
+295,99,Stachys byzantina,Stachys lanata,5,12000,27,3
+296,99,Stachys byzantina,Stachys lanata,12,27000,60,1
+297,99,Stachys byzantina,Stachys lanata,25,46000,61,3
+298,100,Stipas,Stipa,5,18000,56,4
+299,100,Stipas,Stipa,12,43000,61,4
+300,100,Stipas,Stipa,25,67000,47,4
+301,101,Tamarix ramosissima,Tamarisco,5,12000,57,3
+302,101,Tamarix ramosissima,Tamarisco,12,28000,40,1
+303,101,Tamarix ramosissima,Tamarisco,25,49000,63,2
+304,102,Thuja orientalis,Thuja de cerco,5,12000,55,4
+305,102,Thuja orientalis,Thuja de cerco,12,42000,2,3
+306,102,Thuja orientalis,Thuja de cerco,25,61000,14,1
+307,103,Trachelospermum jasminoides,Jazmín de leche,5,23000,47,4
+308,103,Trachelospermum jasminoides,Jazmín de leche,12,38000,3,3
+309,103,Trachelospermum jasminoides,Jazmín de leche,25,53000,29,2
+310,104,tulbaghia violacea,Tulbaghia,5,23000,5,2
+311,104,tulbaghia violacea,Tulbaghia,12,27000,14,1
+312,104,tulbaghia violacea,Tulbaghia,25,57000,27,1
+313,105,Verbena bonariensis,Verbena bonariensis,5,17000,40,4
+314,105,Verbena bonariensis,Verbena bonariensis,12,45000,35,3
+315,105,Verbena bonariensis,Verbena bonariensis,25,41000,47,2
+316,106,Viburnum tinus,Laurentino,5,17000,14,1
+317,106,Viburnum tinus,Laurentino,12,30000,59,2
+318,106,Viburnum tinus,Laurentino,25,55000,30,2
+319,107,Viburnum tinus 'Compactum',Laurentino enano,5,16000,46,1
+320,107,Viburnum tinus 'Compactum',Laurentino enano,12,38000,6,1
+321,107,Viburnum tinus 'Compactum',Laurentino enano,25,63000,23,2
+322,108,Vinca major,Vinca major,5,18000,20,4
+323,108,Vinca major,Vinca major,12,48000,22,4
+324,108,Vinca major,Vinca major,25,67000,63,1
+325,109,Vinca minor,Vinca minor,5,15000,38,1
+326,109,Vinca minor,Vinca minor,12,34000,53,2
+327,109,Vinca minor,Vinca minor,25,56000,35,2
+328,110,Westringia fruticosa,Westringia,5,18000,26,1
+329,110,Westringia fruticosa,Westringia,12,38000,31,3
+330,110,Westringia fruticosa,Westringia,25,61000,7,3
+331,111,Yucca verde,Yucca verde,5,24000,21,2
+332,111,Yucca verde,Yucca verde,12,45000,45,1
+333,111,Yucca verde,Yucca verde,25,54000,4,3
+334,112,Zantedeschia aethiopica,Cala,5,24000,2,4
+335,112,Zantedeschia aethiopica,Cala,12,47000,30,4
+336,112,Zantedeschia aethiopica,Cala,25,74000,57,4
+337,113,Zephyranthes flor blanca,Zephyranthes flor blanca,5,23000,62,2
+338,113,Zephyranthes flor blanca,Zephyranthes flor blanca,12,27000,62,1
+339,113,Zephyranthes flor blanca,Zephyranthes flor blanca,25,61000,40,2
