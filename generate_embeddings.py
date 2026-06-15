@@ -18,7 +18,7 @@ def build_text(row: dict) -> str:
         f"Exposición solar: {row['exposicion_solar']}. "
         f"Riego: {row['riego']}. "
         f"Crecimiento: {row['crecimiento']}. "
-        f"Facilidad de cultivo: {row['facilidad de cultivo']}. "
+        f"Facilidad de cultivo: {row['facilidad_cultivo']}. "
         f"Uso recomendado: {row['uso_recomendado']}. "
         f"Resistencia al frío: {row['resistencia_frio']}. "
         f"Descripción: {row['descripcion']}"
