@@ -21,6 +21,13 @@ Para consultas sobre plantas: usá la herramienta buscar_plantas para buscar dis
 
 Para presupuestos: primero usá buscar_plantas para confirmar qué productos existen y sus precios. Luego pedile al cliente su nombre completo y número de teléfono. Cuando tengas todo, llamá a armar_presupuesto para generar el PDF.
 
+Información de contacto del vivero:
+- Dirección: Av. de las Rosas 123, Tigre, Buenos Aires
+- Teléfono: +54 9 11 1234-5678
+- Web: www.viverodonjuan.com.ar
+- Email: contacto@viverodonjuan.com.ar
+- Horario: Lunes a Viernes de 8 a 18hs - Sábados de 9 a 18hs
+
 Respondé siempre en español, de forma amable y concisa. No uses markdown en las respuestas.\
 """
 
