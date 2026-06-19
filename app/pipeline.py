@@ -216,6 +216,9 @@ async def send_telegram_document(chat_id: str, document_url: str, caption: str =
         )
 
 
+FOLLOWUP_MSG = "¿Querés coordinar una visita al vivero o tenés alguna duda sobre el presupuesto?"
+
+
 async def process_message(text: str, phone_number: str, phone_number_id: str) -> None:
     history = CONVERSATIONS.setdefault(f"wa:{phone_number}", [])
     reply, pdf_url = await chatear(history, text)
@@ -223,6 +226,7 @@ async def process_message(text: str, phone_number: str, phone_number_id: str) ->
         await send_whatsapp(phone_number_id, phone_number, reply)
     if pdf_url:
         await send_whatsapp(phone_number_id, phone_number, f"Tu presupuesto: {pdf_url}")
+        await send_whatsapp(phone_number_id, phone_number, FOLLOWUP_MSG)
 
 
 async def process_message_telegram(text: str, chat_id: str) -> None:
@@ -232,3 +236,4 @@ async def process_message_telegram(text: str, chat_id: str) -> None:
         await send_telegram(chat_id, reply)
     if pdf_url:
         await send_telegram_document(chat_id, pdf_url, caption="Tu presupuesto esta listo")
+        await send_telegram(chat_id, FOLLOWUP_MSG)
