@@ -95,6 +95,34 @@ async def send_whatsapp(phone_number_id: str, to: str, text: str) -> None:
         )
 
 
+async def send_telegram(chat_id: str, text: str) -> None:
+    url = f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage"
+    async with httpx.AsyncClient() as client:
+        await client.post(url, json={"chat_id": chat_id, "text": text}, timeout=10)
+
+
+async def process_message_telegram(text: str, chat_id: str) -> None:
+    embedding = await get_embedding(text)
+    plants = await search_plants(embedding)
+    plant_ids = [p["plant_id"] for p in plants]
+    catalog = await get_catalog(plant_ids) if plant_ids else []
+    context = build_context(plants, catalog)
+
+    response = await anthropic_client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1024,
+        system=SYSTEM_PROMPT,
+        messages=[
+            {
+                "role": "user",
+                "content": f"Contexto de plantas relevantes:\n{context}\n\nConsulta: {text}",
+            }
+        ],
+    )
+    reply = response.content[0].text
+    await send_telegram(chat_id, reply)
+
+
 async def process_message(text: str, phone_number: str, phone_number_id: str) -> None:
     embedding = await get_embedding(text)
     plants = await search_plants(embedding)

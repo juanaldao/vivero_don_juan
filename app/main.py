@@ -4,7 +4,7 @@ import hmac
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Request
 
 from . import config
-from .pipeline import process_message
+from .pipeline import process_message, process_message_telegram
 
 app = FastAPI()
 
@@ -42,6 +42,20 @@ async def webhook(request: Request, background_tasks: BackgroundTasks):
 
     background_tasks.add_task(process_message, text, phone_number, phone_number_id)
     return {"status": "ok"}
+
+
+@app.post("/telegram")
+async def telegram_webhook(request: Request, background_tasks: BackgroundTasks):
+    update = await request.json()
+    msg = update.get("message", {})
+    text = msg.get("text")
+    chat_id = str(msg.get("chat", {}).get("id", ""))
+
+    if not text or not chat_id:
+        return {"ok": True}
+
+    background_tasks.add_task(process_message_telegram, text, chat_id)
+    return {"ok": True}
 
 
 @app.get("/health")
