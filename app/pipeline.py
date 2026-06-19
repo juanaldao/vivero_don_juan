@@ -13,6 +13,16 @@ supabase = create_client(config.SUPABASE_URL, config.SUPABASE_SERVICE_KEY)
 
 # In-memory conversation history keyed by "tg:<chat_id>" or "wa:<phone>"
 CONVERSATIONS: dict[str, list] = {}
+GREETED: set[str] = set()
+
+WELCOME_MSG = (
+    "¡Hola! Bienvenido al Vivero Don Juan 🌿\n\n"
+    "Puedo ayudarte con:\n"
+    "1. Buscar plantas y consultar precios\n"
+    "2. Armar un presupuesto en PDF\n"
+    "3. Horarios y cómo contactarnos\n\n"
+    "¿En qué te puedo ayudar?"
+)
 
 SYSTEM_PROMPT = """\
 Sos el asistente virtual del Vivero Don Juan. Ayudás a los clientes a elegir plantas y armar presupuestos.
@@ -220,7 +230,11 @@ FOLLOWUP_MSG = "¿Querés coordinar una visita al vivero o tenés alguna duda so
 
 
 async def process_message(text: str, phone_number: str, phone_number_id: str) -> None:
-    history = CONVERSATIONS.setdefault(f"wa:{phone_number}", [])
+    key = f"wa:{phone_number}"
+    history = CONVERSATIONS.setdefault(key, [])
+    if key not in GREETED:
+        GREETED.add(key)
+        await send_whatsapp(phone_number_id, phone_number, WELCOME_MSG)
     reply, pdf_url = await chatear(history, text)
     if reply:
         await send_whatsapp(phone_number_id, phone_number, reply)
@@ -230,7 +244,15 @@ async def process_message(text: str, phone_number: str, phone_number_id: str) ->
 
 
 async def process_message_telegram(text: str, chat_id: str) -> None:
-    history = CONVERSATIONS.setdefault(f"tg:{chat_id}", [])
+    key = f"tg:{chat_id}"
+    history = CONVERSATIONS.setdefault(key, [])
+    if text.strip() == "/start":
+        GREETED.add(key)
+        await send_telegram(chat_id, WELCOME_MSG)
+        return
+    if key not in GREETED:
+        GREETED.add(key)
+        await send_telegram(chat_id, WELCOME_MSG)
     reply, pdf_url = await chatear(history, text)
     if reply:
         await send_telegram(chat_id, reply)
