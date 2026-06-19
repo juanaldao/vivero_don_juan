@@ -4,42 +4,46 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Vivero Don Juan** — a WhatsApp chatbot for a plant nursery. Customers can ask about plant care (sun, water, growth), get prices, and request quotes (presupuestos). All conversation is in Spanish.
+**Vivero Don Juan** — a chatbot for a plant nursery, currently deployed on Telegram for testing (WhatsApp Enterprise number pending). Customers can ask about plant care (sun, water, growth), get prices, and request PDF quotes (presupuestos). All conversation is in Spanish.
 
 ## Architecture
 
 ```
-WhatsApp customer
+Telegram / WhatsApp customer
       ↓ (message)
-   Kapso
-      ↓ POST /webhook
+   Telegram Bot API / Kapso
+      ↓ POST /telegram  or  POST /webhook
    FastAPI (Railway)
-      ↓ embed query (OpenAI text-embedding-3-small)
-   Supabase pgvector  ←→  descripcion + catalogo tables
-      ↓ top-3 plants + catalog variants
-   Claude API (claude-sonnet-4-6)
-      ↓ Spanish reply
-   Kapso → WhatsApp customer
+      ↓ per-user conversation history (in-memory)
+   Claude API (claude-sonnet-4-6) with tool use
+      ├─ tool: buscar_plantas → embed (OpenAI) → Supabase pgvector search
+      └─ tool: armar_presupuesto → PDF (reportlab) → Supabase Storage
+      ↓ Spanish reply + optional PDF document
+   Telegram Bot API / Kapso → customer
 ```
 
 ## Stack
 
 - **Backend**: Python 3, FastAPI, uvicorn — `app/` package
-- **AI**: OpenAI `text-embedding-3-small` for embeddings, Anthropic `claude-sonnet-4-6` for chat
-- **Database**: Supabase (PostgreSQL + pgvector extension)
+- **AI**: OpenAI `text-embedding-3-small` for embeddings, Anthropic `claude-sonnet-4-6` for chat with tool use
+- **PDF**: `reportlab` — generates branded A4 quote PDFs with `logo.png`
+- **Database**: Supabase (PostgreSQL + pgvector extension + Storage for PDFs)
 - **Deployment**: Railway — auto-deploys from `main` branch via `Procfile`
-- **WhatsApp**: Kapso (Enterprise API)
+- **Messaging**: Telegram Bot API (active, for testing) + Kapso WhatsApp (pending number)
 - **Schema management**: Supabase GitHub integration — migrations in `supabase/migrations/` auto-deploy on push to `main`
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `app/main.py` | FastAPI app — `/webhook` (POST) and `/health` (GET) |
-| `app/pipeline.py` | Core logic: embed → search → Claude → reply |
-| `app/config.py` | Env var loading (raises on missing vars) |
+| `app/main.py` | FastAPI app — `/webhook` (Kapso/WhatsApp), `/telegram` (Telegram), `/health` |
+| `app/pipeline.py` | Conversation loop: per-user history, Claude tool use, send reply/PDF |
+| `app/quotes.py` | PDF generation (`generar_pdf`), Supabase Storage upload, `buscar_variante`, `ejecutar_armar_presupuesto` |
+| `app/config.py` | Env var loading — required vars raise on missing; `TELEGRAM_BOT_TOKEN` is optional |
+| `logo.png` | Nursery logo — embedded in the top-left of every PDF quote |
 | `supabase/migrations/20260615000000_initial_schema.sql` | Tables: `descripcion` (vector 1536) + `catalogo` |
 | `supabase/migrations/20260615000001_search_function.sql` | `search_plants()` RPC for cosine similarity search |
+| `supabase/migrations/20260619000000_presupuestos.sql` | `presupuestos` table + public Storage bucket (created manually — migration did not auto-run) |
 | `generate_embeddings.py` | One-time script — generates OpenAI embeddings for `descripcion.csv` |
 | `load_data.py` | One-time script — loads both CSVs into Supabase |
 | `Procfile` | `web: uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
@@ -52,11 +56,26 @@ WhatsApp customer
 **`catalogo`** table — product variants (many per plant, different container sizes)
 - `variante_id`, `plant_id` (FK), `nombre_comun`, `nombre_cientifico`, `tamano_envase_lts`, `precio`, `stock`, `elegibilidad`
 
+**`presupuestos`** table — quote records
+- `id` (SERIAL), `nombre_cliente`, `telefono_cliente`, `total`, `pdf_url`, `created_at`
+
 Prices in ARS. `elegibilidad` rated 1–4. Search uses HNSW index with cosine distance.
+
+**Supabase Storage**: public bucket `presupuestos` — PDF files named `PRE-XXXX.pdf`.
+
+## Conversation Flow
+
+Each user has an in-memory history keyed by `"tg:<chat_id>"` or `"wa:<phone>"` in `CONVERSATIONS` (dict in `pipeline.py`). History resets on service restart.
+
+Claude uses two tools:
+- **`buscar_plantas(query)`** — embeds query, searches pgvector, returns plant info + pricing from catalog
+- **`armar_presupuesto(items, nombre_cliente, telefono_cliente)`** — looks up variants, generates PDF, uploads to Supabase Storage, returns URL
+
+`buscar_variante` first searches `catalogo.nombre_comun` by ilike; if no match, falls back to `descripcion.nombre_comun` → looks up `plant_id` → queries `catalogo` by `plant_id`. This handles name mismatches between the two tables.
 
 ## Environment Variables
 
-All required. Set in Railway dashboard → service → Variables.
+Set in Railway dashboard → service → Variables.
 
 ```
 SUPABASE_URL
@@ -65,14 +84,16 @@ OPENAI_API_KEY            # for embeddings
 ANTHROPIC_API_KEY         # for Claude chat
 KAPSO_API_BASE_URL        # https://api.kapso.ai
 KAPSO_API_KEY
-KAPSO_WEBHOOK_SECRET      # generated by Kapso when creating the webhook (see below)
+KAPSO_WEBHOOK_SECRET      # generated by Kapso when creating the webhook
+TELEGRAM_BOT_TOKEN        # optional — Telegram bot for testing
 ```
 
 ## Deployed URLs
 
 - **Railway (production)**: `https://vivero-don-juan-production.up.railway.app`
 - **Health check**: `https://vivero-don-juan-production.up.railway.app/health` → `{"status":"ok"}`
-- **Webhook endpoint**: `https://vivero-don-juan-production.up.railway.app/webhook`
+- **WhatsApp webhook**: `https://vivero-don-juan-production.up.railway.app/webhook`
+- **Telegram webhook**: `https://vivero-don-juan-production.up.railway.app/telegram`
 - **GitHub repo**: `https://github.com/juanaldao/vivero_don_juan`
 - **Supabase**: project `vivero_don_juan` (Juan's account)
 
@@ -83,12 +104,12 @@ KAPSO_WEBHOOK_SECRET      # generated by Kapso when creating the webhook (see be
 - [x] `search_plants()` RPC deployed in Supabase
 - [x] FastAPI app built and deployed on Railway — health check passing
 - [x] Supabase GitHub integration active — schema migrations auto-deploy on push to `main`
+- [x] Telegram bot active and tested end-to-end — plant queries + PDF quotes working
+- [x] PDF quote generation with branded logo, uploaded to Supabase Storage, delivered via `sendDocument`
+- [x] `presupuestos` table and Storage bucket created manually in Supabase dashboard
 
-## Next Step: Kapso Webhook Registration
+## Next Step: Kapso Webhook Registration (when WhatsApp number is ready)
 
-This is where we left off. The Railway service is live but not yet receiving WhatsApp messages.
-
-**What needs to happen:**
 1. Confirm the customer's WhatsApp number is connected in Kapso and get the `phone_number_id`:
    ```bash
    kapso whatsapp numbers list --output json
