@@ -15,7 +15,7 @@ Telegram / WhatsApp customer
       ↓ POST /telegram  or  POST /webhook
    FastAPI (Railway)
       ↓ per-user conversation history (in-memory)
-   Claude API (claude-sonnet-4-6) with tool use
+   Claude API (claude-haiku-4-5) with tool use
       ├─ tool: buscar_plantas → embed (OpenAI) → Supabase pgvector search
       └─ tool: armar_presupuesto → PDF (reportlab) → Supabase Storage
       ↓ Spanish reply + optional PDF document
@@ -25,7 +25,7 @@ Telegram / WhatsApp customer
 ## Stack
 
 - **Backend**: Python 3, FastAPI, uvicorn — `app/` package
-- **AI**: OpenAI `text-embedding-3-small` for embeddings, Anthropic `claude-sonnet-4-6` for chat with tool use
+- **AI**: OpenAI `text-embedding-3-small` for embeddings, Anthropic `claude-haiku-4-5` for chat with tool use
 - **PDF**: `reportlab` — generates branded A4 quote PDFs with `logo.png`
 - **Database**: Supabase (PostgreSQL + pgvector extension + Storage for PDFs)
 - **Deployment**: Railway — auto-deploys from `main` branch via `Procfile`
