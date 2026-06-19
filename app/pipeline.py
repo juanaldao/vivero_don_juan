@@ -1,4 +1,5 @@
 import asyncio
+import traceback
 import httpx
 from openai import AsyncOpenAI
 from anthropic import AsyncAnthropic
@@ -162,6 +163,7 @@ async def chatear(history: list, user_text: str) -> tuple[str, str | None]:
                     else:
                         content = "Herramienta desconocida."
                 except Exception as e:
+                    traceback.print_exc()
                     content = f"Error al ejecutar {b.name}: {e}"
                 tool_results.append({
                     "type": "tool_result",
