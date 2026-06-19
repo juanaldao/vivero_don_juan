@@ -107,6 +107,9 @@ TELEGRAM_BOT_TOKEN        # optional — Telegram bot for testing
 - [x] Telegram bot active and tested end-to-end — plant queries + PDF quotes working
 - [x] PDF quote generation with branded logo, uploaded to Supabase Storage, delivered via `sendDocument`
 - [x] `presupuestos` table and Storage bucket created manually in Supabase dashboard
+- [x] Welcome message for first-time users (works on Telegram and WhatsApp) — tracked in `GREETED` set in `pipeline.py`
+- [x] Follow-up message after PDF quote delivery — prompts customer to coordinate a visit or ask questions
+- [ ] Persist conversation history to Supabase — currently in-memory, resets on every deploy or service restart
 
 ## Next Step: Kapso Webhook Registration (when WhatsApp number is ready)
 
