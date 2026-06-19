@@ -41,13 +41,11 @@ def buscar_variante(nombre: str, envase_lts=None) -> dict | None:
     result = _query(
         _supabase.table("catalogo").select("*").ilike("nombre_comun", f"%{nombre}%")
     )
-    print(f"[buscar_variante] nombre={nombre!r} envase={envase_lts} → catalogo hit={bool(result.data)}", flush=True)
     if result.data:
         return result.data[0]
 
     # Fallback: look up plant_id via descripcion table, then query catalogo
     desc = _supabase.table("descripcion").select("plant_id").ilike("nombre_comun", f"%{nombre}%").limit(1).execute()
-    print(f"[buscar_variante] descripcion fallback hit={bool(desc.data)}", flush=True)
     if not desc.data:
         return None
     plant_id = desc.data[0]["plant_id"]
@@ -250,7 +248,6 @@ def generar_pdf(
 
 
 def _armar_presupuesto_sync(args: dict) -> tuple[str, str | None]:
-    print(f"[armar_presupuesto] args={args}", flush=True)
     items_input      = args.get("items", [])
     nombre_cliente   = args.get("nombre_cliente", "")
     telefono_cliente = args.get("telefono_cliente", "")
