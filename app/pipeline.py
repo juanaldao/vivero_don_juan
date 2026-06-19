@@ -145,7 +145,7 @@ async def chatear(history: list, user_text: str) -> tuple[str, str | None]:
 
     for _ in range(10):
         resp = await anthropic_client.messages.create(
-            model="claude-sonnet-4-6",
+            model="claude-haiku-4-5",
             max_tokens=1024,
             system=SYSTEM_PROMPT,
             tools=TOOLS,
